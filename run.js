@@ -5,7 +5,7 @@ const ticketService = new TicketService();
 
 try {
   ticketService.purchaseTickets(1,
-    // new TicketTypeRequest("ADULT", 0),
+    new TicketTypeRequest("ADULT", 0),
     new TicketTypeRequest("CHILD", 1),
     new TicketTypeRequest("INFANT", 1)
   );
