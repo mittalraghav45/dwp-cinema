@@ -39,9 +39,7 @@ export default class TicketService {
       const count = request.getNoOfTickets();
 
       if (!Number.isInteger(count) || count <= 0) {
-        throw new InvalidPurchaseException(
-          "Ticket count must be greater than 0",
-        );
+        throw new InvalidPurchaseException("Ticket count must be greater than 0");
       }
 
       if (!VALID_TYPES.includes(type)) {
@@ -56,21 +54,15 @@ export default class TicketService {
     }
 
     if (totalTickets > 25) {
-      throw new InvalidPurchaseException(
-        "Cannot purchase more than 25 tickets",
-      );
+      throw new InvalidPurchaseException("Cannot purchase more than 25 tickets");
     }
 
     if (adultCount === 0 && childCount + infantCount > 0) {
-      throw new InvalidPurchaseException(
-        "Child and Infant tickets require at least one Adult",
-      );
+      throw new InvalidPurchaseException("Child and Infant tickets require at least one Adult");
     }
 
     if (infantCount > adultCount) {
-      throw new InvalidPurchaseException(
-        "Each infant must be accompanied by one adult",
-      );
+      throw new InvalidPurchaseException("Each infant must be accompanied by one adult");
     }
 
     const totalAmount =
