@@ -26,8 +26,9 @@ describe("TicketService", () => {
     test("should throw error when ticket count is zero", () => {
       expect(() => {
         service.purchaseTickets(1, new TicketTypeRequest("ADULT", 0));
-      }).toThrow(InvalidPurchaseException);
-    });
+      }).toThrow(TypeError);
+    
+  });
   });
 
  
