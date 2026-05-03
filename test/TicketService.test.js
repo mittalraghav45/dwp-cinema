@@ -23,12 +23,11 @@ describe("TicketService", () => {
       }).toThrow(InvalidPurchaseException);
     });
 
-    test("should throw error when ticket count is zero", () => {
-      expect(() => {
-        service.purchaseTickets(1, new TicketTypeRequest("ADULT", 0));
-      }).toThrow(TypeError);
-    
-  });
+  test("should throw error when ticket count is zero", () => {
+  expect(() => {
+    service.purchaseTickets(1, new TicketTypeRequest("ADULT", 0));
+  }).toThrow(TypeError);
+});
   });
 
  
