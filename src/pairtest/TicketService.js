@@ -60,7 +60,7 @@ export default class TicketService {
     }
 
     if (totalTickets > MAX_TICKETS) {
-      throw new InvalidPurchaseException(`MAximum of purchse of ${MAX_TICKETS} tickets`);
+      throw new InvalidPurchaseException(`A maximum purchase of ${MAX_TICKETS} tickets is allowed`);
     }
 
     if (adultCount === 0 && childCount + infantCount > 0) {
