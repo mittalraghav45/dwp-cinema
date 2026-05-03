@@ -9,7 +9,7 @@ const PRICES = {
 };
 
 const VALID_TYPES = ["ADULT", "CHILD", "INFANT"];
-
+const MAX_TICKETS =25;
 export default class TicketService {
   constructor() {
     this.paymentService = new TicketPaymentService();
@@ -59,10 +59,8 @@ export default class TicketService {
       else infantCount += count;
     }
 
-    if (totalTickets > 25) {
-      throw new InvalidPurchaseException(
-        "Cannot purchase more than 25 tickets",
-      );
+    if (totalTickets > MAX_TICKETS) {
+      throw new InvalidPurchaseException(`MAximum of purchse of ${MAX_TICKETS} tickets`);
     }
 
     if (adultCount === 0 && childCount + infantCount > 0) {
